@@ -1,6 +1,13 @@
 .App {
   text-align: center;
 }
+.ant-transfer{
+  text-align:center;
+  align-items: center;
+  /* border:1px solid red; */
+  justify-content: center;
+
+}
 
 .App-logo {
   height: 40vmin;
