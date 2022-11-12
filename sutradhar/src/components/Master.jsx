@@ -2,7 +2,10 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import { useEffect, useState } from "react";
 import { Transfer } from "antd";
-
+import styles from "../Pages/HomePage.module.css";
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 const Master = () => {
   const [datas, setData] = useState([]);
   const [targetKeys, setTargetKeys] = useState([]);
@@ -39,9 +42,16 @@ const Master = () => {
     setTargetKeys(targetKeys);
   };
   return (
-    <Box 
-    // border={"1px solid yellow"}
-     marginTop={"1%"}>
+    <Box
+    //   border={"1px solid blue"}
+
+      marginTop={"1%"}
+    >
+      <Box border={"1px solid blue"} width={"100px"} margin={"auto"}>
+      <FormGroup >
+      <FormControlLabel disabled control={<Checkbox  defaultChecked border={"1px solid red"}/>} label="Move" />
+    </FormGroup>
+      </Box>
       <Box
         display={"flex"}
         justifyContent={"space-around"}
@@ -50,20 +60,25 @@ const Master = () => {
         <Typography>Master</Typography>
         <Typography>New Elements</Typography>
       </Box>
-      <Transfer
-        dataSource={datas}
-        listStyle={{
-          width: 450,
-          height: 300,
-        //   border: "1.5px solid green",
-        }}
-        // operations={["",""]}
-        targetKeys={targetKeys}
-        onChange={handleChange}
-        render={(item) =>
-          `${item.id}-${item.name}-${item.username}-${item.email}`
-        }
-      />
+      <Box>
+        <Transfer
+          id={styles.transfer}
+          dataSource={datas}
+          listStyle={{
+            width: 450,
+            height: 200,
+            // border: "4.5px solid green",
+            display: "grid",
+            gridTemplateColumns: "repeat(1,100%)",
+          }}
+          // operations={["",""]}
+          targetKeys={targetKeys}
+          onChange={handleChange}
+          render={(item) =>
+            `${item.id}-${item.name}-${item.username}-${item.email}`
+          }
+        />
+      </Box>
     </Box>
   );
 };
