@@ -47,7 +47,7 @@ const Master = () => {
 
       marginTop={"1%"}
     >
-      <Box border={"1px solid blue"} width={"100px"} margin={"auto"}>
+      <Box  width={"100px"} margin={"auto"}>
       <FormGroup >
       <FormControlLabel disabled control={<Checkbox  defaultChecked border={"1px solid red"}/>} label="Move" />
     </FormGroup>
